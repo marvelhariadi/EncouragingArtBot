@@ -51,8 +51,6 @@ Commands:
 Inspired by and created for my dear friend, Thalia. 
 
 ## Notes
-all bot tokens present in GitHub are deactivated and invalid. 
-
 Future scaleability plans:
 - we can improve the venting feature so that the venting occurs in two parts, first the user asks if they can vent. art bot says "sure.". The next text box is then automatically deleted. Requires "next message" detection mechanism?
 - purge() does not work for within bot DMs. Maybe requires change in permissions
