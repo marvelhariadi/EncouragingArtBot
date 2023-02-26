@@ -16,7 +16,7 @@ intents.message_content = True
 bot = commands.Bot(command_prefix='!', intents=intents)
 
 artEncouragements = [
-  "Your style is very beautiful", "I see you've improved!",
+  "Your style is very beautiful", "I see your art has improved!",
   "Your art always brings me joy", "I like your art style",
   "Your art is so cool!!!"
 ]
@@ -87,7 +87,7 @@ async def on_message(message):
 async def bobRossGif(ctx):
   api_key = os.getenv("API_KEY")
   api_instance = giphy_client.DefaultApi()
-  api_response = api_instance.gifs_search_get(api_key, "bob+ross+quote", limit=5, rating='g')
+  api_response = api_instance.gifs_search_get(api_key, "bob+ross+quote")
   lst = list(api_response.data)
   giffingtons = random.choice(lst)
   await ctx.channel.send(giffingtons.embed_url)
