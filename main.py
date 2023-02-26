@@ -87,7 +87,7 @@ async def on_message(message):
 async def bobRossGif(ctx):
   api_key = os.getenv("API_KEY")
   api_instance = giphy_client.DefaultApi()
-  api_response = api_instance.gifs_search_get(api_key, "bob+ross+quote")
+  api_response = api_instance.gifs_search_get(api_key, "bob+ross+quote", rating='g')
   lst = list(api_response.data)
   giffingtons = random.choice(lst)
   await ctx.channel.send(giffingtons.embed_url)
