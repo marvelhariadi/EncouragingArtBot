@@ -1,7 +1,7 @@
 import discord
 from discord.ext import commands
 import os
-from dotenv import load_dotenv  #needed for os to work. note: doesn't work for replit ver. as replit won't allow me to create .env file
+#from dotenv import load_dotenv  #needed for os to work. note: doesn't work for replit ver. as replit won't allow me to create .env file
 import requests
 import json
 import random
@@ -46,7 +46,7 @@ async def on_message(message):
   msg = message.content
   ctx = await bot.get_context(message)
 
- #guard
+  #guard
   if message.author == bot.user:  #if the author of the message comes from the bit
     return  #do nothing
 
@@ -71,8 +71,9 @@ async def on_message(message):
   if 'art bot' in msg.lower() and 'vent' in msg.lower():
     await message.delete()  #immediately deletes that function
     await message.channel.send(
-      f"thank you for sharing your hard feelings with me, {author}. I am proud of you for making it this far <3") 
-    
+      f"thank you for sharing your hard feelings with me, {author}. I am proud of you for making it this far <3"
+    )
+
   #bob ross gif function
   if 'art bot' in msg.lower() and 'bob ross' in msg.lower():
     await bobRossGif(ctx)
@@ -83,11 +84,11 @@ async def on_message(message):
     )
     await bobRossGif(ctx)
 
-#helper function:
+
 async def bobRossGif(ctx):
-  api_key = os.getenv("API_KEY")
+  api_key = "oAt1ZMQPRviPJ1TnY1XIs3GgRPiN1Sbg"
   api_instance = giphy_client.DefaultApi()
-  api_response = api_instance.gifs_search_get(api_key, "bob+ross+quote", rating='g')
+  api_response = api_instance.gifs_search_get(api_key, "bob+ross+inspirational+quote", limit=30, rating='g')
   lst = list(api_response.data)
   giffingtons = random.choice(lst)
   await ctx.channel.send(giffingtons.embed_url)
