@@ -1,7 +1,12 @@
 import discord
 import os
+import requests
+import json
 
-client = discord.Client()
+intents = discord.Intents.default()
+intents.message_content = True
+
+client = discord.Client(intents=intents)
 
 @client.event #when message is recieved
 async def on_ready():
@@ -16,4 +21,4 @@ async def on_message():
         await message.channel.send('Hello!')
 
 
-client.run(os.getenv('TOKEN'))
+client.run(os.getenv('TOKEN')) 
