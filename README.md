@@ -1,5 +1,5 @@
 # EncouragingArtBot
-A discord bot that sends uplifting messages (and occasionally: Bob Ross gifs) for artists. Created for discord art communities 
+A discord bot that sends uplifting messages (and occasionally: Bob Ross gifs) for artists. Created for discord art communities.
 
 To use in your server: https://discord.com/api/oauth2/authorize?client_id=1078574197506322492&permissions=534723947584&scope=bot
 
