@@ -39,10 +39,12 @@ Commands:
 - negative self talk mitigator - detects negative self talk based on keywords and automatically outputs a rebutting message to encourage high self-esteem and confidence in users' art
 
 ## Demo
-[under construction]
+![ezgif-3-77e1921f0f](https://user-images.githubusercontent.com/77342694/221417565-f32beb74-69f0-4075-ab94-9590a4b969a8.gif)
+![ezgif-3-6b0e4006c3](https://user-images.githubusercontent.com/77342694/221417567-f58d9a59-bc6f-45ac-a8d7-3d44b4f63a87.gif)
+
 
 ## Tech Stack
-- Hosted live using Replit & UptimeRobot
+- Hosted live using Repl.it & UptimeRobot
 - Uses Giphy API & Discord API
 
 ## Special Thanks
