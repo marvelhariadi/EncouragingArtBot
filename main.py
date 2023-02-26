@@ -71,7 +71,7 @@ async def on_message(message):
     )
     
   #bob ross gif function
-  if 'art bot' in msg.lower() and 'bob ross me' in msg.lower():
+  if 'art bot' in msg.lower() and 'bob ross' in msg.lower():
     await bobRossGif(ctx)
 
   if ("sad".lower() in msg):
