@@ -44,7 +44,6 @@ async def on_ready():
 @client.event #when bot makes message 
 async def on_message(message):
     author = message.author.name
-    msg = message.content #for ease
 
     #guard
     if message.author == client.user: #if the author of the message comes from the bit
@@ -58,8 +57,13 @@ async def on_message(message):
     if any(word in msg for word in negSelfTalk):
         await message.channel.send(random.choice(cheerUppers))
 
+    #vent function
+    if message.content.lower().startswith('venting: '):
+         await message.delete() #immediately deletes that function
+         await message.channel.send(f"thank you for sharing your hard feelings with me, {author}. I am proud of you <3")
+
 keep_alive()
-client.run(os.getenv('TOKEN')) 
+client.run(os.getenv('TOKEN')) #different on replit
  
 #bot features i want:
 #add a compliment
