@@ -75,7 +75,7 @@ async def on_message(message):
     )
     await bobRossGif(ctx)
 
-
+#helper function:
 async def bobRossGif(ctx):
   api_key = os.getenv("API_KEY")
   api_instance = giphy_client.DefaultApi()
