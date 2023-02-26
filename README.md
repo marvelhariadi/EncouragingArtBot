@@ -44,7 +44,7 @@ Commands:
 
 
 ## Tech Stack
-- Hosted live using Replit & UptimeRobot
+- Hosted live using Repl.it & UptimeRobot
 - Uses Giphy API & Discord API
 
 ## Special Thanks
