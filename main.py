@@ -16,16 +16,17 @@ intents.message_content = True
 bot = commands.Bot(command_prefix='!', intents=intents)
 
 artEncouragements = [
-  "Your style is very beautiful", "i see you've improved",
-  "Your art always brings me joy", "I like your art style"
+  "Your style is very beautiful", "I see you've improved!",
+  "Your art always brings me joy", "I like your art style",
+  "Your art is so cool!!!"
 ]
 
 cheerUppers = [
   "Hey!! Your art is freakin GORGEOUS and so are you",
-  "Believe in yourself or I will make you x",  #threatening love
-  "The world would be so boring without your art",
-  "You should know everyone looks at your art with stars in their eyes",
-  f"Stop manifesting negativity in your life. You deserve to love yourself (and your art) the way I love you",
+  "Believe in yourself or I will make you xoxo",  #threatening love
+  "But the world would be so boring without your art!",
+  "You should know everyone looks at your art with stars in their eyes!",
+  "You deserve to love yourself the way I love you",
 ]
 
 negSelfTalk = [
@@ -56,8 +57,7 @@ async def on_message(message):
 
   #say encouraging words for artists
   if 'art bot' in msg.lower() and 'be nice' in msg.lower():
-    await message.channel.send(
-      f'Hello, {author}! You certainly look friend-shaped today')
+    await message.channel.send(random.choice(artEncouragements))
     
   #combat negative self talk
   if any(word in msg for word in negSelfTalk):
@@ -68,7 +68,7 @@ async def on_message(message):
     await message.channel.purge(limit=1)  #immediately deletes that function
     await message.channel.send(
       f"thank you for sharing your hard feelings with me, {author}. Nobody will ever see that ever again. I am proud of you for making it this far <3"
-    ) #scaleability note: we can improve this function so that the venting occurs in two parts, first the user asks if they can vent. art bot says "sure.". The next text box is then automatically deleted. Requires "next message" detection mechanism?
+    )
     
   #bob ross gif function
   if 'art bot' in msg.lower() and 'bob ross me' in msg.lower():
