@@ -1,4 +1,5 @@
 import discord
+import os
 
 client = discord.Client()
 
@@ -11,8 +12,8 @@ async def on_message():
     if message.author == client.user: #if the author of the message comes from the bit
         return #do nothing
 
-    if message.content.startswith()'$hello'):
+    if message.content.startswith('$hello'): #test
         await message.channel.send('Hello!')
 
 
-client.run()
+client.run(os.getenv('TOKEN'))
