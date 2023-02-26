@@ -58,10 +58,6 @@ async def on_message(message):
     if any(word in msg for word in negSelfTalk):
         await message.channel.send(random.choice(cheerUppers))
 
-
-# def updateBotOutputs(posMessage):
-#     if "encouragement" in db.keys():
-
 keep_alive()
 client.run(os.getenv('TOKEN')) 
  
