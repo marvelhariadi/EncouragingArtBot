@@ -51,24 +51,27 @@ async def on_message(message):
     return  #do nothing
 
   #say hi
-  if ('hi' in msg.lower() or "hello" in msg.lower()) and 'art bot' in msg.lower():
+  if ('hi' in msg.lower()
+      or "hello" in msg.lower()) and 'art bot' in msg.lower():
     await message.channel.send(
       f'Hello, {author}! You certainly look friend-shaped today')
+
+  if (msg.lower() == "art bot"):
+    await message.channel.send(f'Hiya, {author}!')
 
   #say encouraging words for artists
   if 'art bot' in msg.lower() and 'be nice' in msg.lower():
     await message.channel.send(random.choice(artEncouragements))
-    
+
   #combat negative self talk
   if any(word in msg for word in negSelfTalk):
     await message.channel.send(random.choice(cheerUppers))
 
   #vent function
   if 'art bot' in msg.lower() and 'vent' in msg.lower():
-    await message.channel.purge(limit=1)  #immediately deletes that function
+    await message.delete()  #immediately deletes that function
     await message.channel.send(
-      f"thank you for sharing your hard feelings with me, {author}. Nobody will ever see that ever again. I am proud of you for making it this far <3"
-    )
+      f"thank you for sharing your hard feelings with me, {author}. I am proud of you for making it this far <3") 
     
   #bob ross gif function
   if 'art bot' in msg.lower() and 'bob ross' in msg.lower():
