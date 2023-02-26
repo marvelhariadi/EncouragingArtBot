@@ -1,8 +1,11 @@
 import discord
 import os
+import os
+from dotenv import load_dotenv
 import requests
 import json
 
+load_dotenv()
 intents = discord.Intents.default()
 intents.message_content = True
 
@@ -20,5 +23,7 @@ async def on_message():
     if message.content.startswith('$hello'): #test
         await message.channel.send('Hello!')
 
+TOKEN = 
+print(len(TOKEN))
 
-client.run(os.getenv('TOKEN')) 
+client.run(os.getenv('TOKEN'))  #change this later. env is not working rn for some reason
