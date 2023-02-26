@@ -45,33 +45,38 @@ async def on_message(message):
   msg = message.content
   ctx = await bot.get_context(message)
 
-  #guard
+ #guard
   if message.author == bot.user:  #if the author of the message comes from the bit
     return  #do nothing
 
   #say hi
-  if msg.lower().startswith('hi art bot'):  #test
+  if ('hi' in msg.lower() or "hello" in msg.lower()) and 'art bot' in msg.lower():
     await message.channel.send(
       f'Hello, {author}! You certainly look friend-shaped today')
 
-  #give encouragement
+  #say encouraging words for artists
+  if 'art bot' in msg.lower() and 'be nice' in msg.lower():
+    await message.channel.send(
+      f'Hello, {author}! You certainly look friend-shaped today')
+    
+  #combat negative self talk
   if any(word in msg for word in negSelfTalk):
     await message.channel.send(random.choice(cheerUppers))
 
   #vent function
-  if msg.lower().startswith('vent time:'):
-    await message.channel.purge(1)  #immediately deletes that function
+  if 'art bot' in msg.lower() and 'vent' in msg.lower():
+    await message.channel.purge(limit=1)  #immediately deletes that function
     await message.channel.send(
-      f"thank you for sharing your hard feelings with me, {author}. I am proud of you <3"
-    )
-
+      f"thank you for sharing your hard feelings with me, {author}. Nobody will ever see that ever again. I am proud of you for making it this far <3"
+    ) #scaleability note: we can improve this function so that the venting occurs in two parts, first the user asks if they can vent. art bot says "sure.". The next text box is then automatically deleted. Requires "next message" detection mechanism?
+    
   #bob ross gif function
-  if msg.lower().startswith('bob ross me'):
+  if 'art bot' in msg.lower() and 'bob ross me' in msg.lower():
     await bobRossGif(ctx)
 
   if ("sad".lower() in msg):
     await message.channel.send(
-      "I'm sorry you've been down. Perhaps Papa Ross's wisdoms shall bring you peace"
+      "I'm sorry you've been down. Perhaps papa Ross's wisdoms shall bring you peace"
     )
     await bobRossGif(ctx)
 
