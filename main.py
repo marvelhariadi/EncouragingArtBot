@@ -86,7 +86,7 @@ async def on_message(message):
 
 
 async def bobRossGif(ctx):
-  api_key = "oAt1ZMQPRviPJ1TnY1XIs3GgRPiN1Sbg"
+  api_key = os.getenv("API_KEY")
   api_instance = giphy_client.DefaultApi()
   api_response = api_instance.gifs_search_get(api_key, "bob+ross+inspirational+quote", limit=30, rating='g')
   lst = list(api_response.data)
