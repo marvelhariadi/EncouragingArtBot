@@ -28,7 +28,7 @@ Commands:
         I have stuff I need to vent art bot
         art bot....vent time:
 
-- "art bot...bob ross..." - sends a gif of bob ross with a lovely bob ross quote
+- "art bot...bob ross..." - sends a gif of Bob Ross to make you feel better.
 
         Acceptable example phrasings:
         bob ross time art bot
