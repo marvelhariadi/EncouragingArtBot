@@ -28,7 +28,7 @@ Commands:
         I have stuff I need to vent art bot
         art bot....vent time:
 
-- "art bot...bob ross..." - sends a gif of bob ross with a lovely bob ross quote
+- "art bot...bob ross..." - sends a gif of Bob Ross to make you feel better.
 
         Acceptable example phrasings:
         bob ross time art bot
@@ -51,8 +51,6 @@ Commands:
 Inspired by and created for my dear friend, Thalia. 
 
 ## Notes
-all bot tokens present in GitHub are deactivated and invalid. 
-
 Future scaleability plans:
 - we can improve the venting feature so that the venting occurs in two parts, first the user asks if they can vent. art bot says "sure.". The next text box is then automatically deleted. Requires "next message" detection mechanism?
 - purge() does not work for within bot DMs. Maybe requires change in permissions
