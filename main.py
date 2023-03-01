@@ -18,7 +18,7 @@ bot = commands.Bot(command_prefix='!', intents=intents)
 artEncouragements = [
   "Your style is very beautiful", "I see your art has improved!",
   "Your art always brings me joy", "I like your art style",
-  "Your art is so cool!!!"
+  "Your art is so cool!!!", "My eyes are always blessed when I look upon thou art"
 ]
 
 cheerUppers = [
@@ -31,7 +31,7 @@ cheerUppers = [
 
 negSelfTalk = [
   "ugly", "bad", "I don't like my art style", "I dont like my art style",
-  "horrendous", "hate", "mistake"
+  "horrendous", "hate", "mistake", "sucks"
 ]
 
 
@@ -47,7 +47,7 @@ async def on_message(message):
   ctx = await bot.get_context(message)
 
   #guard
-  if message.author == bot.user:  #if the author of the message comes from the bit
+  if message.author == bot.user:  #if the author of the message comes from the bot
     return  #do nothing
 
   #say hi
@@ -74,7 +74,7 @@ async def on_message(message):
       f"thank you for sharing your hard feelings with me, {author}. I am proud of you for making it this far <3"
     )
 
-  #bob ross gif function
+  #bob ross gif features
   if 'art bot' in msg.lower() and 'bob ross' in msg.lower():
     await bobRossGif(ctx)
 
